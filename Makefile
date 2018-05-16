@@ -1,8 +1,6 @@
 all:
-	pdflatex paper.tex
+	pdflatex thesis.tex
 	mv chapters/*.aux buildlog/chapters/
-	# mv chapters/2-torta/*.aux buildlog/chapters/2-torta/
-	# mv chapters/3-porta/*.aux buildlog/chapters/3-porta/
 	mv frontmatter/*.aux buildlog/frontmatter/
 	mv *.aux buildlog/
 	mv *.idx buildlog/
@@ -10,13 +8,11 @@ all:
 	mv *.out buildlog/
 
 bib:
-	pdflatex paper.tex
-	bibtex paper
-	pdflatex paper.tex
-	pdflatex paper.tex
+	pdflatex thesis.tex
+	bibtex thesis
+	pdflatex thesis.tex
+	pdflatex thesis.tex
 	mv chapters/*.aux buildlog/chapters/
-	# mv chapters/2-torta/*.aux buildlog/chapters/2-torta/
-	# mv chapters/3-porta/*.aux buildlog/chapters/3-porta/
 	mv frontmatter/*.aux buildlog/frontmatter/
 	mv *.aux buildlog/
 	mv *.idx buildlog/
