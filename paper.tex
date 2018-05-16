@@ -34,6 +34,35 @@
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{makeidx}
+\usepackage{url}
+
+
+
+\usepackage{balance}  % to better equalize the last page
+%\usepackage[T1]{fontenc}
+% \usepackage{txfonts}
+% \usepackage{url}      % llt: nicely formatted URLs
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{ccicons}
+%\usepackage{todonotes}
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{tabulary}
+
+\usepackage{float}
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black, citecolor=black, urlcolor=black,plainpages=false,pdfpagelabels]{hyperref}
+\hypersetup{ pdfauthor = {Your Name Here}, pdftitle = {The Title of The Dissertation}, pdfkeywords = {Keywords for Searching}, pdfcreator = {pdfLaTeX with hyperref package}, pdfproducer = {pdfLaTeX}}
+
+\newcommand{\rev}[1]{#1}
+
+\def\fig#1{Figure~\ref{#1}}
+\def\tab#1{Table~\ref{#1}}
+\def\eqn#1{Equation~\ref{#1}}
+
+
 \makeindex
 % You will need to uncomment the \printindex line near the
 % bibliography to display the index.  Use the command
@@ -49,8 +78,7 @@
 % See: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=hyperdupdest
 % Note: This may not work correctly with all DVI viewers (i.e. Yap breaks).
 
-\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black, citecolor=black, urlcolor=black,plainpages=false,pdfpagelabels]{hyperref}
-\hypersetup{ pdfauthor = {Your Name Here}, pdftitle = {The Title of The Dissertation}, pdfkeywords = {Keywords for Searching}, pdfcreator = {pdfLaTeX with hyperref package}, pdfproducer = {pdfLaTeX}}
+
 
 \begin{document}
 
@@ -78,6 +106,9 @@ Professor Leo Porter\\
 
 \include{chapters/1-intro}
 \include{chapters/2-torta}
+% \include{chapters/2-torta/1-torta}
+% \include{chapters/2-torta/2-formative}
+% \include{chapters/2-torta/3-system}
 
 
 %% END MATTER
@@ -88,5 +119,9 @@ Professor Leo Porter\\
 %                              There are many others.
 % \bibliography{myrefs}  %% This looks for the bibliography in myrefs.bib 
 %                          which should be formatted as a bibtex file.
+
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{references}
+
 \end{document}
 
