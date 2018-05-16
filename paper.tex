@@ -1,0 +1,92 @@
+% UCSD Mathematics Dissertation Template
+%
+% Please read the comments in this file and make appropriate edits.
+% NOTE: Always refer to the ``Preperation and Submission Manual for 
+% Doctoral Dissertations and Masters Theses for 20**'', where 20** is 
+% the year of your graduation, for officiation preparations guidelines.
+%
+% If you desire more control, please see the attached files:
+%   * ucsd.cls -- Class file
+%   * uct10.clo, uct11.clo, uct12.clo -- Configuration files for font sizes 10pt,11pt,12pt
+%
+% CHANGELOG:
+%   * Original file adapted from brockman.tex by JRB and RMR
+%     to work with ucsd.cls
+
+
+\documentclass[12pt,chapterheads]{ucsd}
+% documentclass options: default is 11pt, oneside, final.
+% fonts: 10pt, 11pt, 12pt -- are valid for UCSD dissertations.
+% sides: oneside, twoside -- note that two-sided theses are not accepted by OGS
+% mode: draft, final -- draft mode switches to single spacing, removes hyperlinks,
+%                       and places a black box at every overfull hbox (check these before submission).
+% chapterheads -- include this if you want your chapters to read:
+% Chapter 1
+% Title of Chapter
+%
+% instead of
+%
+% 1 Title of Chapter
+
+
+\usepackage[paper=letterpaper]{geometry}
+\usepackage{amsmath, amscd, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{makeidx}
+\makeindex
+% You will need to uncomment the \printindex line near the
+% bibliography to display the index.  Use the command
+% \index{keyword} within the text to create an entry in the index
+% for keyword.
+
+%% HYPERLINKS
+% To create a PDF with hyperlinks, you need to include the hyperref package.
+% THIS HAS TO BE THE LAST PACKAGE INCLUDED!
+% Note that the options plainpages=false and pdfpagelabels exist
+% to fix indexing associated with having both (ii) and (2) as pages.
+% Also, all links must be black according to OGS.
+% See: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=hyperdupdest
+% Note: This may not work correctly with all DVI viewers (i.e. Yap breaks).
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black, citecolor=black, urlcolor=black,plainpages=false,pdfpagelabels]{hyperref}
+\hypersetup{ pdfauthor = {Your Name Here}, pdftitle = {The Title of The Dissertation}, pdfkeywords = {Keywords for Searching}, pdfcreator = {pdfLaTeX with hyperref package}, pdfproducer = {pdfLaTeX}}
+
+\begin{document}
+
+\title{Operating System monitoring for programming tutorial creation and evaluation}
+\author{Alok Shankar Mysore}
+\degreeyear{2018}
+\degree{Masters} 
+
+\field{Computer Science}
+\chair{Professor Philip J. Guo}
+\othermembers{
+Professor Scott R. Klemmer\\ 
+Professor Leo Porter\\
+}
+\numberofmembers{3}
+
+\begin{frontmatter}
+\makefrontmatter
+\include{frontmatter/dedication}
+\include{frontmatter/epigraph}
+\include{frontmatter/acknowledgements}
+\include{frontmatter/vita}
+\include{frontmatter/abstract}
+\end{frontmatter}
+
+\include{chapters/1-intro}
+\include{chapters/2-torta}
+
+
+%% END MATTER
+% \printindex %% Uncomment to display the index
+% \nocite{}  %% Put any references that you want to include in the bib 
+%               but haven't cited in the braces.
+% \bibliographystyle{alpha}  %% This is just my personal favorite style. 
+%                              There are many others.
+% \bibliography{myrefs}  %% This looks for the bibliography in myrefs.bib 
+%                          which should be formatted as a bibtex file.
+\end{document}
+
