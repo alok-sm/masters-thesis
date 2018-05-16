@@ -25,15 +25,18 @@ Professor Leo Porter\\
 
 \begin{frontmatter}
 \makefrontmatter
-\input{frontmatter/dedication}
-\input{frontmatter/epigraph}
-\input{frontmatter/acknowledgements}
-\input{frontmatter/vita}
-\input{frontmatter/abstract}
+\include{frontmatter/dedication}
+\include{frontmatter/epigraph}
+\include{frontmatter/acknowledgements}
+\include{frontmatter/vita}
+\include{frontmatter/abstract}
 \end{frontmatter}
 
-\input{chapters/1-intro}
-\input{chapters/2-torta}
+\include{chapters/1-intro/0-content}
+\include{chapters/2-torta/0-content}
+
+
+
 \bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{references}
 
