@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{makeidx}
+\usepackage{boxedminipage}
+\usepackage{setspace}
 \usepackage{url}
 \usepackage{balance}
 \usepackage{color}
@@ -30,10 +32,44 @@
     pdfcreator = {pdfLaTeX with hyperref package}, 
     pdfproducer = {pdfLaTeX}}
 
+\newenvironment{mynote}{
+    \medskip
+    \noindent
+    \let\emph=\textbf
+    \begin{boxedminipage}{\columnwidth}
+}{
+    \end{boxedminipage}\vspace{0.5em}
+}
+
 \newcommand{\rev}[1]{#1}
 
 \def\fig#1{Figure~\ref{#1}}
 \def\tab#1{Table~\ref{#1}}
 \def\eqn#1{Equation~\ref{#1}}
 
+\hyphenation{ana-ly-sis}
+\hyphenation{ana-ly-ses}
+\hyphenation{app-li-ca-tions}
+\hyphenation{macOS}
+\hyphenation{Deja-View}
+\hyphenation{Demo-Wiz}
+\hyphenation{Power-Point}
+\hyphenation{Apple-Script}
+\hyphenation{FFmpeg}
+\hyphenation{Cour-sera}
+\hyphenation{bi-directional}
+\hyphenation{MATLAB}
+\hyphenation{ubi-qui-tous}
+\hyphenation{LaTeX}
+\hyphenation{tool-kits}
+
+\makeindex
+
+\begin{document}
+
 \input{content}
+
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{references}
+
+\end{document}
