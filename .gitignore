@@ -1,2 +1,5 @@
 buildlog/
 thesis.pdf
+*.lot
+*.lof
+*.toc
