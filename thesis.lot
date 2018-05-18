@@ -1,0 +1,10 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tutorial creator study results, showing subject IDs, which tool they used first, summary of their tutorial, time in each tool, and the numbers of steps in Torta and GDoc tutorials ($\dagger $ did not explicitly denote steps in GDocs). All times reported in minutes, with Torta split into recorder+editor times.}}{26}{table.3.1}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of trace data that is automatically collected by Porta's OS-wide and within-browser trackers. All events are timestamped.}}{44}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of Porta events recorded during the 12 student user study sessions for Python, Git, and Web Design tutorials. Session time is in minutes. ``Local" events include both shell commands and compiler/interpreter toolchain (e.g., Python) invocations. ``Clip" is clipboard copy-and-paste. ``Pages" is opening additional webpages in new tabs.}}{55}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Porta uses mouse location as a proxy for where the user's attention is focused. a) If the user hovers over anywhere in this code block element, Porta will record it as being in focus and b) render it as a red hotspot in the sidebar heatmap. c) If the user hovers over an element (e.g., background) that is larger than the viewport, that event is ignored.}}{56}{table.4.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
