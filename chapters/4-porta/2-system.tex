@@ -1,3 +1,16 @@
+\begin{figure*}[h!]
+\centering
+\includegraphics[width=1\columnwidth]{figures/porta/porta-overview.png}
+
+\caption{Porta provides feedback to tutorial creators about how users
+navigated through their tutorials and what application errors they
+encountered.}
+
+\vspace{-0.25em} % stent
+
+\label{fig:porta-overview}
+\end{figure*}
+
 \section{Porta Design and Implementation}
 
 The goal of Porta is to give tutorial creators an efficient way to see
@@ -136,7 +149,7 @@ profile.
 
 Note that the related Torta system~\cite{MysoreUIST2017} contains
 similar screencast video and shell command recorders, but all other
-components described in this paper are not in Torta. Also, the goal of
+components described here are not in Torta. Also, the goal of
 our Porta system differs from those of prior application profilers:
 Porta's novelty lies in combining this data with web browser tracking
 (next section) to create \emph{tutorial profiles}.
@@ -144,7 +157,7 @@ Porta's novelty lies in combining this data with web browser tracking
 
 \subsection{Web Browsing Activity Tracker}
 
-\begin{figure}
+\begin{figure}[h!]
 \includegraphics[width=\columnwidth]{figures/porta/mouse-hover.png}
 \vspace{-0.5em} % stent
 \caption{Porta uses mouse location as a proxy for where the user's
@@ -276,7 +289,7 @@ application usage profiler from the prior section to create novel
 
 \subsection{Tutorial Profiling Visualizations}
 
-\input{chapters/3-porta/tbl_tracers}
+\input{chapters/4-porta/tbl_tracers}
 
 \tab{tbl:tracers} summarizes the data that Porta automatically collects
 on the participant's computer as they follow a tutorial during a testing
@@ -327,7 +340,7 @@ visualization shows hotspots of where participants spent the most time
 while following a tutorial.
 
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\columnwidth]{figures/porta/porta-viewer-sketch}
 
@@ -343,7 +356,7 @@ while following a tutorial.
   \label{fig:porta-components}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\columnwidth]{figures/porta/heatmap}
 
@@ -401,7 +414,7 @@ display vertically down an IDE's or text editor's gutter to show which
 lines of code were executed the most.
 
 
-\begin{figure}
+\begin{figure}[h!]
   \includegraphics[width=0.95\columnwidth]{figures/porta/popup.jpg}
   %\vspace{-0.25em} % stent
 

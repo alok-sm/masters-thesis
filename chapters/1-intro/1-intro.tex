@@ -1,13 +1,68 @@
 \chapter{Introduction}
-This is only a test.
-\section{A section}
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla odio
-sem, bibendum ut, aliquam ac, facilisis id, tellus. Nam posuere pede
-sit amet ipsum. Etiam dolor. In sodales eros quis pede.  Quisque sed
-nulla et ligula vulputate lacinia. In venenatis, ligula id semper
-feugiat, ligula odio adipiscing libero, eget mollis nunc erat id orci.
-Nullam ante dolor, rutrum eget, vestibulum euismod, pulvinar at, nibh.
-In sapien. Quisque ut arcu. Suspendisse potenti. Cras consequat cursus
-nulla.
-\subsection{More Stuff}
-Blah
+It can be hard for experts in any field to write high-quality
+documentation, instructional materials, and step-by-step tutorials. Instructional materials such as these are vital for helping people such as
+software developers, data scientists, researchers, and system
+administrators perform complex software-based tasks. 
+
+One can either create a written tutorial by painstakingly enumerating 
+all steps, describing shell commands, expected outputs, and side-effects,
+and taking screenshots to illustrate GUI actions. Or one can demonstrate
+all of the steps and record a screencast video, but it is tedious
+to later fix bugs in videos. Neither approach is ideal for
+creators. Also, neither is ideal for people trying to follow these
+tutorials: manually-written tutorials may skip over critical details
+~\cite{Lafreniere2013}, and videos can be difficult to browse and
+navigate~\cite{Krosnick2014,Pavel2014}.
+
+Additionally, once these tutorials are created, their creators cannot
+easily get a sense of how people navigate through them or what parts 
+they frequently get stuck on. They also cannot easily predict where 
+new users might struggle~\cite{Lafreniere2013}. Despite 
+the creator's best efforts, it is all too easy to omit certain tutorial
+steps, gloss over subtle details, or provide incomplete explanations.
+This is an instance of the \emph{expert blind spot} effect~\cite{Nathan2001}
+where experts have trouble relating to what novices might know and not
+know.
+
+Thus, learners inevitably struggle because a) Quality tutorials are hard to come by because of the effort to create them. b) Tutorials that do exist have errors or bugs that the creators have no way to diagnose.
+
+These limitations served as our research questions:
+\begin{enumerate}
+    \item Can we streamline the process for tutorial creation so that creating tutorial should be as easy as recording a screencast video, but tutorials should offer advantages of text-based formats like easy skimming and copy-paste.
+    \item Can we provide effective feedback to tutorial creators about how learners are actually stepping through their tutorials and which parts lead to the most struggle?
+\end{enumerate}
+
+The core technical insight that underpins our solutions to these problems is
+that \rev{the operating system already keeps track of vital filesystem and
+process-level metadata necessary for creating and evaluating tutorials.}
+
+The contributions of this paper are:
+
+\begin{itemize}\itemsep0pt
+
+\item [1a] A new approach to \rev{generating mixed-media tutorials by combining
+screencast video recording with application-agnostic
+operating-system-wide activity tracing}.
+
+\item [1b] Torta (\textbf{T}ransparent \textbf{O}perating-system 
+\textbf{R}ecording for \textbf{T}utorial \textbf{A}cquisition), a 
+prototype system that instantiates this approach for macOS. Torta 
+consists of an operating-system-wide activity recorder, a
+tutorial editor, and a tutorial viewer that can validate step-by-step
+progress and even run certain steps.
+
+\item [2a] The novel idea of \emph{tutorial profiling} using operating-system-wide activity tracing.
+
+\item [2b] Porta (\textbf{P}rofiling \textbf{O}perating-system 
+\textbf{R}ecordings for \textbf{T}utorial \textbf{A}ssessment), a 
+prototype that instantiates this idea for macOS. Porta consists of an
+OS-wide activity recorder, a webpage navigation tracker, and interactive
+profiling visualizations.
+
+\end{itemize}
+
+% \begin{enumerate}
+%     \item \textbf{Torta} (\textbf{T}ransparent \textbf{O}perating-system \textbf{R}ecording for \textbf{T}utorial \textbf{A}cquisition), a system to automatically generated step-by-step mixed media tutorials by recording a screencast video along with OS-level events such as filesystem modifications and process invocations on the creator's machine
+
+%     \item \textbf{Porta} (\textbf{P}rofiling \textbf{O}perating-system \textbf{R}ecordings for \textbf{T}utorial \textbf{A}ssessment), a system to provides feedback to tutorial creators about how users navigated through their tutorials and what application errors they encountered by recording a screencast video along with OS-level events such as filesystem modifications and process invocations on the learner's machine
+% \end{enumerate}

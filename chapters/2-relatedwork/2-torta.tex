@@ -1,0 +1,85 @@
+\section{Related work for Torta}
+
+In addition to operating system monitoring, Torta builds upon ideas 
+in three prior lines of work: mixed-media tutorials, generating tutorials 
+by demonstration
+
+\subsection{Mixed-Media Tutorials that Combine Text and Video}
+
+The design of the Torta tutorial format was directly inspired by prior
+work on \emph{mixed-media tutorials} that combine static (text+image)
+and video modalities. These tutorials are formatted as a series of steps
+on a webpage with a mix of textual exposition and embedded mini-videos
+at each step. Chi et al.~\cite{Chi2012} performed a comparative study of
+static, video, and mixed-media tutorials for image manipulation tasks
+and discovered that users found mixed-media tutorials the easiest to
+follow and the least error-prone. From this study they proposed four
+design guidelines for mixed-media tutorials, which Torta follows:
+1)~\emph{scannable steps}: Torta segments the creator's screencast
+recording into steps based on active GUI windows, executed commands, and
+text file edits, which facilitates scanning, 2)~\emph{small but legible
+videos}: Torta crops each video segment to include only the active GUI
+window, which emphasizes the most relevant portions at each step,
+3)~\emph{visualize mouse movement}, and 4)~\emph{give control to the
+user}: Torta tutorials are hierarchical, so more advanced users can hide
+specific steps while novices can expand to see more details.
+
+Inspired by this format, the Video Digests~\cite{Pavel2014} and
+VideoDoc~\cite{Krosnick2014} systems semi-automatically generate
+mixed-media tutorials from existing videos that contain time-aligned
+transcripts. Although these were both designed for reformatting
+lecture and talk videos, they could in principle be repurposed for
+software tutorial videos as well.
+
+In contrast to these projects, which aim to reformat existing video
+tutorials, Torta allows users to make mixed-media tutorials from scratch
+by recording a demonstration of their actions. Since Torta traces
+OS-level metadata during the user demonstration, it can automatically
+provide more specific details about software tutorial steps than text
+transcripts or crowd workers' annotations can.
+
+
+\subsection{Generating Tutorials by User Demonstration}
+
+Torta's approach of generating tutorials via user demonstration of
+actions was inspired by prior systems that operated in a similar way within
+specific software applications.
+
+Image editing applications have been the most popular substrates for
+such demonstration-based tutorial generators. Grabler et al.\ built a
+system that lets users generate photo editing tutorials by augmenting
+the GIMP image editor to record application and UI state~\cite{Grabler2009}.
+Chronicle~\cite{Grossman2010} similarly traces a detailed workflow history
+within Paint.NET, another image editing application, to facilitate
+tutorial creation and replay.
+%
+\rev{This was later turned into the Autodesk
+Screencast~\cite{AutodeskScreencast} product, which records videos, metadata across supported Autodesk applications, app
+switching and mouse/keyboard events, and provides a tutorial editor
+similar to Torta's.}
+%
+Lafreniere et al.~\cite{Lafreniere2014} generated tutorials by
+instrumenting Pixlr, an online image editing app, to collect usage logs
+alongside a screencast video.
+%
+MixT~\cite{Chi2012} creates mixed-media tutorials by capturing
+screencast videos alongside recorded application state and command logs
+within Adobe Photoshop.
+
+Other tools in this space also operate within specific apps or preset
+collections of apps. For instance, ActionShot~\cite{Li2010} augments a
+web browser to record a rich history consisting of in-browser actions
+and form entries, which can be used to make tutorials for complex
+web-based tasks. DocWizards~\cite{Bergman2005} instruments the Eclipse
+IDE to let people generate tutorials for software development within
+that IDE. InterTwine~\cite{Fourney2014} tracks user actions in both the
+Firefox browser and the GIMP image editor to create tutorials that span
+those two applications.
+
+Torta differentiates itself by working across arbitrary sets of macOS
+applications, whereas these prior tutorial generators operate either
+wholly within a single application or on a small fixed set of apps.
+Torta's design trades granularity for generality -- since it aims to be
+generally applicable across all kinds of command-line and GUI apps, it
+cannot do fine-grained tracing within specific apps like these related
+projects can do.

@@ -1,0 +1,126 @@
+\section{Related work for Porta}
+
+Porta introduces the idea of tutorial profiling, which is inspired by
+work in application usage profiling, information scent and improving web
+tutorials apart from OS-wide activity tracing.
+
+\subsection{Application-Specific Usage Profiling}
+
+Porta extends the long lineage of systems that visualize \emph{usage
+profiles} of how people use specific software applications.
+
+Edit Wear and Read Wear~\cite{Hill1992} pioneered the use of graphical
+marks on the scrollbar of a text editor to show where users were most
+frequently editing or reading a document, respectively. Follow-up work
+showed visualizations to help users re-find parts that they had
+previously visited~\cite{Alexander2009}.
+%
+Patina~\cite{Matejka2013patina} is an application-independent
+generalization of these ideas; it displays heatmaps over UI elements on
+Windows applications to show which ones were frequently accessed.
+%
+Our Porta system displays a form of read wear on tutorial webpages in
+the browser, which is powered by traces of how users
+interacted with a multitude of \emph{other} applications on their computers.
+
+%  - we're also a form of read-wear since we track how long you've been
+%    lingering on each part of the webpage (subject to a 3-minute timeout
+%    with no interactions or if the browser isn't the active window.
+%    TODO: can we easily do this?) revisiting read wear
+
+In a similar vein, LectureScape~\cite{KimUIST2014} collects usage
+profiles of how people interact with educational videos. It displays a
+histogram-like visualization overlaid on the scrubber timeline. Peaks in
+this visualization represent where lots of viewers either paused or
+navigated to, which could indicate potential points of high interest or
+confusion. Porta also tracks video navigation but additionally
+correlates that data with how users interact with other applications on
+their computer.
+
+ERICA~\cite{Deka2016} and ZIPT~\cite{Deka2017} capture usage profiles of
+how users navigate through Android mobile apps. It displays flow
+visualizations to help UX designers see which parts of the app their
+users get stuck on. Porta is motivated by similar goals in how it
+displays visualizations to show where users struggle when following
+web-based software tutorials.
+
+Code coverage and profiling tools~\cite{Graham1982,Srivastava1994} now exist for most
+major programming languages. These tools show how many times each line of
+code (or function call) ran and how much time it took. Theseus~\cite{Lieber2014} improves on
+this idea by continually running user code and displaying
+always-on profile visualizations in the margins of the code
+editor. Bifr\"{o}st~\cite{McGrath2017} further extends code profiling to
+mixed hardware-software systems. In contrast, Porta is a
+tutorial profiler that tracks how a user ``runs" a software tutorial by
+following it step-by-step and invoking various applications on
+their computer.
+
+%- code profilers exist for many languages such as gprof and in standard
+%  libraries of languages such as python
+%  (\url{https://docs.python.org/3.6/library/profile.html})
+% Chrome DevTools: JavaScript CPU Profiling in Chrome 58
+% https://developers.google.com/web/updates/2016/12/devtools-javascript-cpu-profile-migration
+
+% 1982 gprof: A Call Graph Execution Profiler by Susan L. Graham, Peter
+% B. Kessler, and Marshall K. Mckusick
+%
+% ATOM: A System for Building Customized Program Analysis Tools by
+% Amitabh Srivastava and Alan Eustace
+
+Porta innovates upon this class of prior work by introducing the novel
+idea of building usage profiles for \emph{software tutorials} rather
+than for specific pieces of software. It is designed to profile
+tutorials whose instructions span multiple applications including web
+browsers, IDEs, terminals, and commands executed on remote servers.
+This makes it well-suited for technical tutorials in domains such as
+software development, computational research, and system
+administration.
+
+
+\subsection{Multi-Application Information Scent}
+
+The profiling sidebar that Porta displays over webpages provides
+information scent~\cite{Pirolli2007} that helps tutorial creators hone in on
+which parts their users struggled with. It was inspired by systems
+that connect information scent across applications.
+
+Codetrail~\cite{Goldman2009} and HyperSource \cite{Hartmann2011} augment
+an IDE by connecting it to a web browser to link code and documentation.
+Codetrail enables interactions such as automatically opening
+documentation related to code that the user is currently editing.
+HyperSource automatically associates code edits with webpages that the
+user is currently viewing. Porta takes a complementary approach by
+displaying multi-application scent in the browser and not being tied to
+any specific IDE.
+
+InterTwine~\cite{Fourney2014} connects a web browser and an image
+editing application. One example form of information scent it provides
+is to augment Google search result pages for image editing queries with
+overlays of screenshots and metadata about how the user edited their own
+images while reading those pages in the past. It requires the GIMP image
+editor to be modified to add instrumentation code. In contrast, Porta
+works across arbitrary command-line and GUI applications without needing
+to modify their code, but its user activity tracing is not as deep as
+what InterTwine provides for GIMP.
+
+
+\subsection{Improving Web-Based Tutorials}
+
+The goal of Porta is to help creators improve tutorials in response to
+how users interact with their content. Porta takes an automated approach
+by tracking activity across applications. In contrast, systems such as
+LemonAid~\cite{Chilana2012} and TaggedComments~\cite{Bunt2014} opt for a
+crowd-based approach by letting users directly annotate parts of
+documentation and tutorial webpages that appear unclear to them. In the
+future, we can add support for annotations to complement Porta's
+automated tracking.
+
+FollowUs~\cite{Lafreniere2013} implements a comprehensive solution by
+embedding an instrumented version of a web-based image editing app
+directly into tutorial webpages. This setup lets users follow
+tutorials and post their own variant demonstrations directly on the
+webpage
+for future users to follow. Porta is motivated by similar goals but does
+not require such specialized instrumentation. It works on existing
+unmodified tutorial webpages and requires only installing a macOS tracer
+app that monitors a variety of other apps without modifying them.

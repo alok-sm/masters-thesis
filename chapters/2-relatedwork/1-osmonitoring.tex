@@ -1,0 +1,33 @@
+\section{Operating-System-Wide Activity Tracing}
+
+Our approach of tracing activity at the operating-system level was 
+inspired by related work in OS-level tracing for user-facing tasks.
+
+The most basic form of OS-level tracing consists of recording low-level
+mouse, keyboard, and multitouch events. Nguyen et al.~\cite{Nguyen2015}
+record mouse click and drag events alongside a screencast video to make
+it possible for viewers to browse through the video by clicking on
+constituent pixels. DemoWiz~\cite{Chi2014} captures mouse and keyboard
+events to augment videos with a visual overlay that aids people in
+giving live presentations. EverTutor~\cite{Wang2014} tracks multitouch
+events on Android smartphones to help users create step-by-step app
+tutorials. Graphstract~\cite{Huang2007} tracks mouse and keyboard events
+and takes mini-screenshots of the areas around those events to generate
+minimalistic static tutorials. 
+
+In terms of higher-level OS activity tracing, KarDo~\cite{Kushman2010}
+records GUI traces using the Windows Accessibility API and
+algorithmically generalizes those traces so that they can be replayed on
+other machines to replicate user actions and reproduce GUI bugs.
+DejaView~\cite{Laadan2007} augments GUI activity tracing with
+fine-grained checkpointing of filesystem and OS environment state so
+that a user can browse and ``time travel" back to earlier system states.
+
+Burrito~\cite{GuoBurrito2012} traces GUI activity, shell commands, and filesystem modifications, but it was designed to help computational scientists
+manage their own workflows, not to create tutorials. Thus, Burrito does not include a
+screencast recorder, video segmenter, tutorial editor, or
+tutorial viewer/player.
+
+In sum, while these tools employ similar OS-level tracing techniques as
+our systems, they are meant for tasks such as automation, OS state
+replication, and scientific workflow management, and thus lack design affordances for automatic tutorial generation and tutorial profiling. 
