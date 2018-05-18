@@ -1,0 +1,46 @@
+\chapter{Conclusion}
+
+% \input{chapters/5-conclusion/1-torta}
+% \input{chapters/5-conclusion/2-porta}
+
+To address the challenge of creating step-by-step tutorial with the same 
+ease of creating a screencast, we created Torta, an end-to-end system 
+for recording, editing, and consuming \rev{mixed-media tutorials that 
+span multiple GUI and command-line applications. The core technical 
+insight that underpins Torta is that the operating system already keeps 
+track of vital filesystem and process-level metadata necessary for 
+segmenting tutorial steps}. Thus, combining operating-system-wide activity 
+tracing with screencast video recording makes it possible to quickly create 
+complex GUI and command-line app tutorials by demonstration. \rev{Torta's
+application-agnostic design} makes it well-suited for creating
+tutorials in domains such as software development, data science, system
+administration, and computational research.
+
+To address the challenges of providing effective feedback on
+the contents of software tutorials, we created Porta, a system
+that automatically builds \emph{tutorial profiles} by tracking user activity
+within a tutorial webpage and across multiple applications.
+Porta surfaces these profiles as interactive visualizations that show
+hotspots of user focus alongside details of logged application events
+and embedded segments of recorded screencast videos. We found via a user
+study of 3 tutorial creators and 12 learners that Porta helped both sets
+of users reflect more concretely about what parts of the tutorials
+caused the most trouble and what could potentially be improved. 
+
+% Porta
+% opens up possibilities for systematic user testing of technical
+% documentation by providing fine-grained data to both test participants
+% and tutorial creators.
+
+% \rev{We hope that it will inspire the design of future tutorial systems
+% that bridge the gap between video- and text-based formats.}
+
+In conclusion, We believe that the systems described in this thesis make a very strong case toward the use of OS-wide monitoring for both creating new tutorials and profiling existing tutorials. 
+
+Torta opens up the possibilities of future tutorial systems that could make 
+it much easier to create step-by-step tutorials through demonstration, this 
+allowing for the proliferation of quality instructional material
+
+Porta on the other hand could enable low cost user testing of 
+instructional material and could lead to improvements of existing tutorials 
+and documentation online.
